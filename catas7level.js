@@ -121,7 +121,27 @@ console.log(nextHappyYear(8088), 8091);
 console.log(nextHappyYear(8999), 9012);
 
 /* №4
+You have to create a function calcType, which receives 3 arguments: 2 numbers, and the result of an unknown operation performed on them (also a number).
+Based on those 3 values you have to return a string, that describes which operation was used to get the given result.
+The possible return strings are: "addition", "subtraction", "multiplication", "division".
+Example:
+calcType(1, 2, 3) -->   1 ? 2 = 3   --> "addition"
  */
+
+function calcType(a, b, res) {
+  return res - b === a
+    ? "addition"
+    : res + b === a
+    ? "subtraction"
+    : res / b === a
+    ? "multiplication"
+    : "division";
+}
+
+console.log(calcType(1, 2, 3), "addition");
+console.log(calcType(10, 4, 40), "multiplication");
+console.log(calcType(10, 5, 5), "subtraction");
+console.log(calcType(9, 5, 1.8), "division");
 
 /* №5
  */
