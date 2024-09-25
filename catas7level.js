@@ -183,7 +183,23 @@ console.log(
 );
 
 /* №6
+Return the number (count) of vowels in the given string.
+We will consider a, e, i, o, u as vowels for this Kata (but not y).
+The input string will only consist of lower case letters and/or spaces.
  */
+
+function getCount(str) {
+  let res = 0;
+  const letters = ["a", "e", "u", "i", "o"];
+  str.split("").forEach((el) => {
+    if (letters.includes(el)) {
+      res += 1;
+    }
+  });
+  return res;
+}
+
+console.log(getCount("abracadabra"), 5);
 
 /* №7
  */
