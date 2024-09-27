@@ -632,7 +632,47 @@ console.log(ownedCatAndDog(24, 24), [2, 2]);
 console.log(ownedCatAndDog(56, 64), [10, 10]);
 
 /* №15
+You're looking through different hex codes, and having trouble telling the difference between #000001 and #100000
+We need a way to tell which is red, and which is blue!
+That's where you create hex color !!!
+It should read an RGB input, and return whichever value (red, blue, or green) is of greatest concentration!
+But, if multiple colors are of equal concentration, you should return their mix!
+red + blue = magenta
+green + red = yellow
+blue + green = cyan
+red + blue + green = white
+One last thing, if the string given is empty, or has all 0's, return black!
+Examples:
+codes = "087 255 054" -> "green"
+codes = "181 181 170" -> "yellow"
+codes = "000 000 000" -> "black"
+codes = "001 001 001" -> "white"
  */
+
+function hexColor(codes) {
+  if (!codes || codes === "000 000 000") return "black";
+
+  let [red, green, blue] = codes.split(" ").map(Number);
+
+  if (red === green && green === blue) return red === 0 ? "black" : "white";
+  if (red === green && red > blue) return "yellow";
+  if (red === blue && red > green) return "magenta";
+  if (green === blue && green > red) return "cyan";
+
+  if (red > green && red > blue) return "red";
+  if (green > red && green > blue) return "green";
+  if (blue > red && blue > green) return "blue";
+}
+
+console.log(hexColor(""), "black");
+console.log(hexColor("000 000 000"), "black");
+console.log(hexColor("121 245 255"), "blue");
+console.log(hexColor("027 100 100"), "cyan");
+console.log(hexColor("021 021 021"), "white");
+console.log(hexColor("255 000 000"), "red");
+console.log(hexColor("000 147 000"), "green");
+console.log(hexColor("212 103 212"), "magenta");
+console.log(hexColor("101 101 092"), "yellow");
 
 /* №16
  */
