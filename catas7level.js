@@ -753,7 +753,22 @@ console.log(oddOne([4, -8, 98, -12, -7, 90, 100]), 4);
 console.log(oddOne([2, 4, 6, 8]), -1);
 
 /* №19
+Implement a function, multiples(m, n), which returns an array of the first m multiples of the real number n. Assume that m is a positive integer.
+Ex.
+multiples(3, 5.0)
+should return
+[5.0, 10.0, 15.0]
  */
+
+function multiples(m, n) {
+  let res = [];
+  for (let i = 1; i <= m; i += 1) {
+    res.push(n * i);
+  }
+  return res;
+}
+
+console.log(multiples(3, 5), [5, 10, 15]);
 
 /* №20
  */
