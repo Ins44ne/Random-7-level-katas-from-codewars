@@ -622,8 +622,16 @@ Results are truncated whole numbers of "human" years
 
 var ownedCatAndDog = function (catYears, dogYears) {
   return [
-    catYears === 15 ? 1 : catYears === 15 ? 2 : (catYears - 24) / 4 + 2,
-    dogYears === 15 ? 1 : dogYears === 15 ? 2 : (dogYears - 24) / 5 + 2,
+    24 <= catYears
+      ? Math.floor((catYears - 24) / 4 + 2)
+      : 15 <= catYears
+      ? 1
+      : 0,
+    24 <= dogYears
+      ? Math.floor((dogYears - 24) / 5 + 2)
+      : 15 <= dogYears
+      ? 1
+      : 0,
   ];
 };
 
