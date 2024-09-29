@@ -815,7 +815,36 @@ console.log(
 );
 
 /* №21
+Create a function (a method in Ruby, an extension method in C#) every which returns every nth element of an array.
+Usage
+With one argument, every(array) returns every element of the array.
+With two arguments, every(array, interval) it returns every intervalth element.
+With three arguments, every(array, interval, start_index) returns every intervalth element starting at index start_index.
+Examples
+every([0,1,2,3,4])     -> [0,1,2,3,4]
+every([0,1,2,3,4],1)   -> [0,1,2,3,4]
+every([0,1,2,3,4],2)   -> [0,2,4]
+every([0,1,2,3,4],3)   -> [0,3]
+every([0,1,2,3,4],3,1) -> [1,4]
  */
+
+function every(arr, interval, start) {
+  let res = [];
+  for (
+    let i = start === undefined ? 0 : start;
+    i < arr.length;
+    i += interval === undefined ? 1 : interval
+  ) {
+    res.push(arr[i]);
+  }
+  return res;
+}
+
+console.log(every([0, 1, 2, 3, 4]), [0, 1, 2, 3, 4]);
+console.log(every([0, 1, 2, 3, 4], 1), [0, 1, 2, 3, 4]);
+console.log(every([0, 1, 2, 3, 4], 2), [0, 2, 4]);
+console.log(every([0, 1, 2, 3, 4], 3), [0, 3]);
+console.log(every([0, 1, 2, 3, 4], 3, 1), [1, 4]);
 
 /* №22
  */
