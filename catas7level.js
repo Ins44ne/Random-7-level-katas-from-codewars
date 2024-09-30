@@ -886,8 +886,23 @@ function recaman(n) {
 }
 
 /* №24
+Closure Counter
+Define the function counter that returns a function that returns an increasing value.
+The first value should be 1.
+You're going to have to use closures.
+Example:
+const newCounter = counter();
+newCounter() // 1
+newCounter() // 2
  */
-console.log;
+
+function counter() {
+  let c = 0;
+  return function () {
+    return (c += 1);
+  };
+}
+
 /* №25
  */
 console.log;
