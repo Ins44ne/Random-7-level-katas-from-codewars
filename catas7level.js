@@ -904,8 +904,45 @@ function counter() {
 }
 
 /* №25
+Your job is to create a simple password validation function, as seen on many websites.
+The rules for a valid password are as follows:
+ - There needs to be at least 1 uppercase letter.
+ - There needs to be at least 1 lowercase letter.
+ - There needs to be at least 1 number.
+ - The password needs to be at least 8 characters long.
+You are permitted to use any methods to validate the password.
+  Examples:
+password("Abcd1234"); ===> true
+password("Abcd123"); ===> false
+password("abcd1234"); ===> false
+password("AbcdefGhijKlmnopQRsTuvwxyZ1234567890"); ===> true
+password("ABCD1234"); ===> false
+password("Ab1!@#$%^&*()-_+={}[]|\:;?/>.<,"); ===> true;
+password("!@#$%^&*()-_+={}[]|\:;?/>.<,"); ===> false;
  */
-console.log;
+
+function password(str) {
+  const hasLowercase = /[a-z]/;
+  const hasUppercase = /[A-Z]/;
+  const hasDigit = /[0-9]/;
+  const len = str.length;
+
+  return (
+    str.length >= 8 &&
+    hasLowercase.test(str) &&
+    hasUppercase.test(str) &&
+    hasDigit.test(str)
+  );
+}
+
+console.log(password("Abcd1234"), true);
+console.log(password("Abcd123"), false);
+console.log(password("abcd1234"), false);
+console.log(password("AbcdefGhijKlmnopQRsTuvwxyZ1234567890"), true);
+console.log(password("ABCD1234"), false);
+console.log(password("Ab1!@#$%^&*()-_+={}[]|:;?/>.<,"), true);
+console.log(password("!@#$%^&*()-_+={}[]|:;?/>.<,"), false);
+
 /* №26
  */
 console.log;
