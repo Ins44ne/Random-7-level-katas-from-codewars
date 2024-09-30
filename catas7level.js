@@ -863,8 +863,28 @@ console.log(noOdds([0, 1]), [0]);
 console.log(noOdds([0, 1, 2, 3]), [0, 2]);
 
 /* №23
+Return the nth term of the Recamán's sequence.
  */
-console.log;
+
+function recaman(n) {
+  let sequence = [0];
+  let seen = new Set([0]);
+
+  for (let i = 1; i <= n; i++) {
+    let prev = sequence[i - 1];
+    let candidate = prev - i;
+
+    if (candidate > 0 && !seen.has(candidate)) {
+      sequence.push(candidate);
+      seen.add(candidate);
+    } else {
+      sequence.push(prev + i);
+      seen.add(prev + i);
+    }
+  }
+  return sequence[n];
+}
+
 /* №24
  */
 console.log;
