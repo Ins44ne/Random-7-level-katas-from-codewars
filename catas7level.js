@@ -1117,8 +1117,26 @@ console.log(
 );
 
 /* №32
+The bloody photocopier is broken... Just as you were sneaking around the office to print off your favourite binary code!
+Instead of copying the original, it reverses it: '1' becomes '0' and vice versa.
+Given a string of binary, return the version the photocopier gives you as a string.
  */
-console.log;
+
+function broken(x) {
+  let res = "";
+  x.split("").forEach((el) => {
+    el === "1" ? (res += "0") : (res += "1");
+  });
+  return res;
+}
+
+console.log(broken("1"), "0");
+console.log(
+  broken("10000000101101111110011001000"),
+  "01111111010010000001100110111"
+);
+console.log(broken("100010"), "011101");
+
 /* №33
  */
 console.log;
