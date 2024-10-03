@@ -1304,8 +1304,38 @@ console.log(
 console.log(friend(["Love", "Your", "Face", "1"]), ["Love", "Your", "Face"]);
 
 /* №39
+Task
+You are given a dictionary/hash/object containing some languages and your test results in the given languages. Return the list of languages where your test score is at least 60, in descending order of the scores.
+Note: the scores will always be unique (so no duplicate values)
+  Examples
+{"Java": 10, "Ruby": 80, "Python": 65}    -->  ["Ruby", "Python"]
+{"Hindi": 60, "Dutch" : 93, "Greek": 71}  -->  ["Dutch", "Greek", "Hindi"]
+{"C++": 50, "ASM": 10, "Haskell": 20}     -->  []
  */
-console.log;
+
+function myLanguages(results) {
+  let arr = [];
+  let res = [];
+  for (let elem in results) {
+    arr.push([elem, results[elem]]);
+  }
+  arr = arr.sort((a, b) => b[1] - a[1]).filter((el) => el[1] >= 60);
+  arr.forEach((el) => {
+    res.push(el[0]);
+  });
+  return res;
+}
+
+console.log(myLanguages({ Java: 10, Ruby: 80, Python: 65 }), [
+  "Ruby",
+  "Python",
+]);
+console.log(myLanguages({ Hindi: 60, Greek: 71, Dutch: 93 }), [
+  "Dutch",
+  "Greek",
+  "Hindi",
+]);
+console.log(myLanguages({ "C++": 50, ASM: 10, Haskell: 20 }), []);
 /* №40
  */
 console.log;
