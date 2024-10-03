@@ -1256,11 +1256,53 @@ console.log(createArrayOfTiers(420), ["4", "42", "420"]);
 console.log(createArrayOfTiers(2017), ["2", "20", "201", "2017"]);
 
 /* №37
+Your task is to write a function which returns the sum of a sequence of integers.
+The sequence is defined by 3 non-negative values: begin, end, step.
+If begin value is greater than the end, your function should return 0. If end is not the result of an integer number of steps, then don't add it to the sum. See the 4th example below.
+  Examples
+2,2,2 --> 2
+2,6,2 --> 12 (2 + 4 + 6)
+1,5,1 --> 15 (1 + 2 + 3 + 4 + 5)
+1,5,3  --> 5 (1 + 4)
  */
-console.log;
+
+const sequenceSum = (b, e, s) => {
+  let res = 0;
+  if (b >= e) {
+    return 0;
+  }
+  for (let i = b; i <= e; i += s) {
+    res += i;
+  }
+  return res;
+};
+
+console.log(sequenceSum(2, 6, 2), 12);
+console.log(sequenceSum(1, 5, 1), 15);
+console.log(sequenceSum(1, 5, 3), 5);
+
 /* №38
+Make a program that filters a list of strings and returns a list with only your friends name in it.
+If a name has exactly 4 letters in it, you can be sure that it has to be a friend of yours! Otherwise, you can be sure he's not...
+  Input = {"Ryan", "Kieran", "Jason", "Yous"}
+  Output = {"Ryan", "Yous"}
+  Input = {"Peter", "Stephen", "Joe"}
+  Output = {}
+Input strings will only contain letters. Note: keep the original order of the names in the output.
  */
-console.log;
+
+function friend(friends) {
+  return friends.filter((el) => el.length === 4);
+}
+
+console.log(friend(["Ryan", "Kieran", "Mark"]), ["Ryan", "Mark"]);
+console.log(friend(["Ryan", "Jimmy", "123", "4", "Cool Man"]), ["Ryan"]);
+console.log(
+  friend(["Jimm", "Cari", "aret", "truehdnviegkwgvke", "sixtyiscooooool"]),
+  ["Jimm", "Cari", "aret"]
+);
+console.log(friend(["Love", "Your", "Face", "1"]), ["Love", "Your", "Face"]);
+
 /* №39
  */
 console.log;
