@@ -1336,9 +1336,22 @@ console.log(myLanguages({ Hindi: 60, Greek: 71, Dutch: 93 }), [
   "Hindi",
 ]);
 console.log(myLanguages({ "C++": 50, ASM: 10, Haskell: 20 }), []);
+
 /* №40
+Write a function that doubles every second integer in a list, starting from the left.
+  Example:
+For input array/list :
+[1,2,3,4]
+the function should return :
+[1,4,3,8]
  */
-console.log;
+
+function doubleEveryOther(a) {
+  return arr.map((num, index) => (index % 2 === 1 ? num * 2 : num));
+}
+
+console.log(doubleEveryOther([1, 2, 3, 4]), [1, 4, 3, 8]);
+
 /* №41
  */
 console.log;
