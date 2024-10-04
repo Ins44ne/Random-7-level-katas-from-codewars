@@ -1353,8 +1353,30 @@ function doubleEveryOther(a) {
 console.log(doubleEveryOther([1, 2, 3, 4]), [1, 4, 3, 8]);
 
 /* №41
+Move every letter in the provided string forward 10 letters through the alphabet.
+If it goes past 'z', start again at 'a'.
+Input will be a string with length > 0.
  */
-console.log;
+
+function moveTen(s) {
+  return s
+    .split("")
+    .map((char) => {
+      if (/[a-z]/.test(char)) {
+        return String.fromCharCode(((char.charCodeAt(0) - 97 + 10) % 26) + 97);
+      } else if (/[A-Z]/.test(char)) {
+        return String.fromCharCode(((char.charCodeAt(0) - 65 + 10) % 26) + 65);
+      } else {
+        return char;
+      }
+    })
+    .join("");
+}
+
+console.log(moveTen("testcase"), "docdmkco");
+console.log(moveTen("codewars"), "mynogkbc");
+console.log(moveTen("exampletesthere"), "ohkwzvodocdrobo");
+
 /* №42
  */
 console.log;
